@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Color dinámico</title>
+        <meta charset="UTF-8">
+        <style>
+            input {
+                padding: 5px 10px;
+                border: 1px solid #ccc;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <h1>Color dinámico</h1>
+        <input type="text" id="input-color" placeholder="Escribe un color en hexadecimal (#XXXXXX)"> 
+        <script>
+            const input = document.getElementById('input-color');
+            const body = document.body;
+
+            input.addEventListener('input', () => {
+                console.log("color: "+ input.value);
+                body.style.backgroundColor = input.value;
+            })
+        </script>
+    </body>
+</html>

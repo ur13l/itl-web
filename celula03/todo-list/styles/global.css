@@ -1,0 +1,24 @@
+body {
+    font-family: 'Verdana', sans-serif;
+}
+
+.new-task-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#input-task {
+    border-color: #dddddd;
+    outline: none;
+    height: 20px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+#button-task {
+    width: 200px;
+    background-color: aqua;
+    border: 2px solid blue;
+    border-radius: 5px;
+}

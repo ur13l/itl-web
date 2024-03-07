@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+}
+
+.menu-item {
+    background-color: white;
+    width: 250px;
+    list-style: none;
+    padding: 10px; /* Parte interior */
+    margin-bottom: 20px; /* Parte exterior */
+    border-width: 2px;
+    border-style: solid;
+    border-color: #c0c0c0;
+    border-radius: 50px;
+    text-align: center;
+}
+
+/*
+Selector para elementos de tipo <a> dentro de un elemento con clase "menu-item"
+*/
+.menu-item a {
+    text-decoration: none;
+    color: #012340;
+    text-transform: uppercase;
+    font-weight: bold;
+}
