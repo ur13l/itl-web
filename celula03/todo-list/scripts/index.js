@@ -13,22 +13,49 @@ input.addEventListener("keyup", function(event) {
 });
 
 function addItem(event) {
-    console.log(event)
-    const task = document.createElement("li");
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
+  console.log(event);
+  const task = document.createElement("li");
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
 
-    const span = document.createElement("span");
-    span.textContent = input.value;
+  const span = document.createElement("span");
+  span.textContent = input.value;
 
-    const removeButton = document.createElement("button");
-    removeButton.textContent = "Eliminar";
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "Eliminar";
+  removeButton.classList.add("remove-button");
+  removeButton.setAttribute("data-index", list.children.length);
 
-    task.append(checkbox);
-    task.append(span);
-    task.append(removeButton);
+  removeButton.addEventListener("click", function () {
+    let longitud = list.children.length;
 
-    list.append(task);
-    input.value = "";
-    input.focus();
+    for (let index = 0; index < longitud; index++) {
+      if (this.dataset.index == index) {
+        var elemento = list.children[index];
+        console.log(index);
+        list.removeChild(elemento);
+        longitud = 0;
+        reajustarIndices();
+      }
+    }
+  });
+
+  function reajustarIndices() {
+    let longitud = list.children.length;
+    for (let index = 0; index < longitud; index++) {
+      list.children[index]
+        .querySelector(".remove-button")
+        .setAttribute("data-index", index);
+    }
+  }
+
+  task.append(checkbox);
+  task.append(span);
+  task.append(removeButton);
+
+  list.append(task);
+  input.value = "";
+  input.focus();
 }
+
+
